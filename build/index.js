@@ -1,13 +1,1 @@
-// index.ts
-await Bun.build({
-  entrypoints: ["./index.tsx"],
-  outdir: "./build",
-  minify: true,
-  plugins: []
-});
-Bun.serve({
-  port: 8080,
-  fetch(req) {
-    return new Response("Hello World!");
-  }
-});
+await Bun.build({entrypoints:["./index.ts"],outdir:"./build",minify:!0,plugins:[]});Bun.serve({port:80,fetch(a){return new Response("Hello World!")}});
