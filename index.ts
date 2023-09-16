@@ -6,7 +6,7 @@ await Bun.build({
 })
 
 Bun.serve({
-    port: 80,
+    port: 443,
     fetch(req: any) {
         return new Response("Hello World!")
     }
