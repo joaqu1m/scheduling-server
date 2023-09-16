@@ -1,11 +1,16 @@
 {
-  "devDependencies": {
-    "@types/node": "^20.6.2",
-    "prisma": "^5.3.1",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.2.2"
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
-  "dependencies": {
-    "@prisma/client": "^5.3.1"
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "nuxt": "^3.7.3"
   }
 }
