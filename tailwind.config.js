@@ -12,6 +12,7 @@ export default {
     extend: {
       colors: {
         'primary-purple': 'rgba(88, 59, 111, 1)',
+        'secondary-purple': 'rgb(114, 74, 147)',
         'primary-gray': 'rgba(48, 43, 51, 1)',
         'primary-white': '#F9F9F9',
       },
