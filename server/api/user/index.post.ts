@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
     const { name, email, password } = typeof body === 'string' ? JSON.parse(body) : body
 
     await prisma.user.create({
-        data: { name, email, password },
+        data: { name, email, password, schedules: [] },
     })
 
     return { status: 201 };
