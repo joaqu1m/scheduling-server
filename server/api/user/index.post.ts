@@ -12,5 +12,5 @@ export default defineEventHandler(async (event) => {
         data: { name, email, password },
     })
 
-    return { status: 201, body: {}};
+    return { status: 201 };
 });

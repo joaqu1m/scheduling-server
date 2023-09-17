@@ -1,28 +1,23 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider  = "sqlite"
-  url       = env("DATABASE_URL")
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+type UserSchedules {
+  id    String   @map("_id") @db.ObjectId
+  desc  String
+  time  DateTime @db.Date
+  title String
 }
 
 model User {
-  id        Int        @id @default(autoincrement())
+  id        String          @id @default(auto()) @map("_id") @db.ObjectId
+  email     String
   name      String
-  email     String     @unique
   password  String
-  schedules Schedule[]
-}
-
-model Schedule {
-  id     Int      @id @default(autoincrement())
-  title  String
-  desc   String
-  time   DateTime
-  User   User?    @relation(fields: [userId], references: [id])
-  userId Int?
+  schedules UserSchedules[]
 }
