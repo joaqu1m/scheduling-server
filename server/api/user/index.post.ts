@@ -4,7 +4,7 @@ const prisma = new PrismaClient()
 
 export default defineEventHandler(async (event) => {
 
-    const body = await readBody(event)
+    const body: string | object[] = await readBody(event)
 
     const { name, email, password } = typeof body === 'string' ? JSON.parse(body) : body
 
