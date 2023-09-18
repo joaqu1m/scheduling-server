@@ -6,7 +6,7 @@
             <slot name="left_main" />
         </div>
         <div
-            class="bg-primary-white w-full h-screen flex gap-10 overflow-x-scroll items-center pl-10"
+            class="bg-primary-white w-full h-screen flex gap-10 overflow-x-scroll items-center px-10"
         >
             <slot name="right_main" />
         </div>

@@ -18,8 +18,6 @@ const days = ref(
     Array(qntDias)
         .fill(undefined)
         .reduce((acc, _, i) => {
-            let curSchedules;
-
             const diaAtual1 = new Date(
                 currentDate.getFullYear(),
                 currentDate.getMonth(),
@@ -30,25 +28,18 @@ const days = ref(
                 diaAtual1.getMonth() * 30 +
                 diaAtual1.getFullYear() * 365;
 
-            body?.[0].days.forEach(({ day, schedules }) => {
+            let schedules: any[] = [];
+            body?.[0].days.forEach(({ day, schedules: curSchedules }) => {
                 const diaAtual2 = new Date(day);
                 const diaNoAno2 =
                     diaAtual2.getDate() +
                     diaAtual2.getMonth() * 30 +
                     diaAtual2.getFullYear() * 365;
 
-                if (diaNoAno1 === diaNoAno2) {
-                    curSchedules = schedules;
-                } else {
-                    curSchedules = [];
-                }
+                if (diaNoAno1 === diaNoAno2) schedules.push(...curSchedules);
             });
 
-            acc.push({
-                day: diaAtual1,
-                schedules: curSchedules,
-            });
-            return acc;
+            return acc.concat({ day: diaAtual1, schedules });
         }, [])
 );
 </script>
