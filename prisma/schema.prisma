@@ -7,17 +7,24 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-type UserSchedules {
-  id    String   @map("_id") @db.ObjectId
-  desc  String
-  time  DateTime @db.Date
-  title String
+type UserDays {
+  id        String            @map("_id") @db.ObjectId
+  day       DateTime          @db.Date
+  schedules UserDaysSchedules
+}
+
+type UserDaysSchedules {
+  id              String   @map("_id") @db.ObjectId
+  desc            String
+  minutesDuration Int
+  timeStart       DateTime @db.Date
+  title           String
 }
 
 model User {
-  id        String          @id @default(auto()) @map("_id") @db.ObjectId
-  email     String
-  name      String
-  password  String
-  schedules UserSchedules[]
+  id       String     @id @default(auto()) @map("_id") @db.ObjectId
+  days     UserDays[]
+  email    String
+  name     String
+  password String
 }

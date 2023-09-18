@@ -1,12 +1,12 @@
 <template>
     <div class="flex">
         <div
-            class="flex justify-center flex-col gap-10 text-2xl text-white h-screen w-[60%] bg-gradient-to-tr from-10% from-primary-gray to-90% to-primary-purple pl-[140px]"
+            class="flex flex-col gap-14 text-lg text-white h-screen min-w-[290px] bg-gradient-to-tr from-10% from-primary-gray to-90% to-primary-purple pt-[40px] pl-[40px] drop-shadow-3xl"
         >
             <slot name="left_main" />
         </div>
         <div
-            class="flex flex-col justify-center items-center gap-14 h-screen bg-black drop-shadow-4xl w-[40%]"
+            class="bg-primary-white w-full h-screen flex gap-10 overflow-x-scroll items-center pl-10"
         >
             <slot name="right_main" />
         </div>
