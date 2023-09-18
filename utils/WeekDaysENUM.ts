@@ -1,4 +1,4 @@
-export default (day) => {
+export default (day: number) => {
     switch (day) {
         case 0:
             return 'Segunda-feira';

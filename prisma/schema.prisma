@@ -8,9 +8,9 @@ datasource db {
 }
 
 type UserDays {
-  id        String            @map("_id") @db.ObjectId
-  day       DateTime          @db.Date
-  schedules UserDaysSchedules
+  id        String              @map("_id") @db.ObjectId
+  day       DateTime            @db.Date
+  schedules UserDaysSchedules[]
 }
 
 type UserDaysSchedules {

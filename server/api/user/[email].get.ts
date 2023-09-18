@@ -10,5 +10,5 @@ export default defineEventHandler(async (event) => {
         where: { email: email }
     })
 
-    return { status: 200, body: { users }};
+    return { status: 200, body: users };
 });

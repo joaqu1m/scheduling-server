@@ -1,4 +1,4 @@
 <template></template>
 <script lang="ts" setup>
-navigateTo('/login')
+navigateTo("/login");
 </script>

@@ -11,9 +11,9 @@ const login = () => {
     if (isLoginLoading.value) return;
     isLoginLoading.value = true;
 
-    // setTimeout(() => {
-    navigateTo("/schedules");
-    // }, 2000);
+    setTimeout(() => {
+        navigateTo("/schedules");
+    }, 1000);
 };
 </script>
 
